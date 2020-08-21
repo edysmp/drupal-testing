@@ -33,6 +33,7 @@
     },
     "scripts": {
         "post-install-cmd": [
+            "@php -r \" file_exists('web/sites/simpletest/browser_output') || mkdir('web/sites/simpletest/browser_output', 0777, true); \"",
             "@php -r \"file_exists('web/core/.env') || copy('tests/config-files/.env', 'web/core/.env');\"",
             "@php -r \"file_exists('web/core/phpunit.xml') || copy('tests/config-files/phpunit.xml', 'web/core/phpunit.xml');\""
         ]
